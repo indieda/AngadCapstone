@@ -1,0 +1,23 @@
+<svg>
+  
+  
+  <text id="steps-label" class="sensor-label" x="200" y="230">stepsLabel</text>
+  <text id="steps-data" class="sensor-data" x="300" y="230">no. Steps</text>
+    <text id="timer" class="timer" x="180" y="180">Timer: </text>
+
+  <text id="hrm-label" class="sensor-label" x="20%" y="230">heartRate</text>
+  <text id="hrm-data" class="sensor-data" x="140" y="230"></text>
+  
+  <use id="startButton" href="#square-button-icon" y="5" fill="fb-green">
+    <set href="#text" attributeName="text-buffer" to="Start!"/>
+    <set href="#image" attributeName="href" to="play.png"/>
+  </use>
+  
+  <use id="stopButton" href = "#square-button-icon" y="80"fill="coral">
+    <set href="#text" attributeName="text-buffer" to="Stop!"/>
+    <set href="#image" attributeName="href" to="stop.png"/>
+  </use>
+  
+  
+</svg>
+
