@@ -44,13 +44,11 @@ function generateThreshold(a){
  counterList[9] = document.getElementById("counter_time_10");
 
 
-
-  counter.text = "Vibrations given: " + counts;
 function ring(){
   vibration.start("alert");
-  counterList[counts].text = "Time of vibration " + counts + ": " + Math.floor((exercise.stats.activeTime/(1000*60))%60) + "Min" + Math.floor((exercise.stats.activeTime/1000)%60)+"sec";
+  counterList[counts].text = "Time of " + (counts + 1) + ": " + Math.floor((exercise.stats.activeTime/(1000*60))%60) + "Min" + Math.floor((exercise.stats.activeTime/1000)%60)+"sec";
   counts ++;
-  counter.text = "Vibrations given: " + counts;
+  counter.text = "Condition: " + counts;
   
 //  setTimeout(, 4000);
 //  vibration.stop();
@@ -91,6 +89,7 @@ function refreshExerciseTimer(){
   if (secondsSinceStart > randTracker[9]) {
     if (!listVibrationCheck[9]){
       console.log(secondsSinceStart);
+      counter.text = "Condition: " + counts;
       ring();
       listVibrationCheck[9] = true;
       console.log(listVibrationCheck);
@@ -99,6 +98,7 @@ function refreshExerciseTimer(){
   else if (secondsSinceStart > randTracker[8]) {
     if (!listVibrationCheck[8]){
       console.log(secondsSinceStart);
+      counter.text = "Condition: " + counts;
       ring();
       listVibrationCheck[8] = true;
       console.log(listVibrationCheck);
@@ -107,6 +107,7 @@ function refreshExerciseTimer(){
   else if (secondsSinceStart > randTracker[7]) {
     if (!listVibrationCheck[7]){
       console.log(secondsSinceStart);
+      counter.text = "Condition: " + counts;
       ring();
       listVibrationCheck[7] = true;
       console.log(listVibrationCheck);
@@ -115,6 +116,7 @@ function refreshExerciseTimer(){
   else if (secondsSinceStart > randTracker[6]) {
     if (!listVibrationCheck[6]){
       console.log(secondsSinceStart);
+      counter.text = "Condition: " + counts;
       ring();
       listVibrationCheck[6] = true;
       console.log(listVibrationCheck);
@@ -123,6 +125,7 @@ function refreshExerciseTimer(){
   else if (secondsSinceStart > randTracker[5]) {
     if (!listVibrationCheck[5]){
       console.log(secondsSinceStart);
+      counter.text = "Condition: " + counts;
       ring();
       listVibrationCheck[5] = true;
       console.log(listVibrationCheck);
@@ -131,6 +134,7 @@ function refreshExerciseTimer(){
   else if (secondsSinceStart > randTracker[4]) {
     if (!listVibrationCheck[4]){
       console.log(secondsSinceStart);
+      counter.text = "Condition: " + counts;
       ring();
       listVibrationCheck[4] = true;
       console.log(listVibrationCheck);
@@ -138,6 +142,7 @@ function refreshExerciseTimer(){
   }
   else if (secondsSinceStart > randTracker[3]) {
     if (!listVibrationCheck[3]){
+      counter.text = "Condition: " + counts;
       console.log(secondsSinceStart);
       ring();
       listVibrationCheck[3] = true;
@@ -147,6 +152,7 @@ function refreshExerciseTimer(){
   else if (secondsSinceStart > randTracker[2]) {
     if (!listVibrationCheck[2]){
       console.log(secondsSinceStart);
+      counter.text = "Condition: " + counts;
       ring();
       listVibrationCheck[2] = true;
       console.log(listVibrationCheck);
@@ -155,6 +161,7 @@ function refreshExerciseTimer(){
   else if (secondsSinceStart > randTracker[1]) {
     if (!listVibrationCheck[1]){
       console.log(secondsSinceStart);
+      counter.text = "Condition: " + counts;
       ring();
       listVibrationCheck[1] = true;
       console.log(listVibrationCheck);
@@ -163,6 +170,7 @@ function refreshExerciseTimer(){
   else if (secondsSinceStart > randTracker[0]) {
     if (!listVibrationCheck[0]){
       console.log(secondsSinceStart);
+      counter.text = "Condition: " + counts;
       ring();
       listVibrationCheck[0] = true;
       console.log(listVibrationCheck);

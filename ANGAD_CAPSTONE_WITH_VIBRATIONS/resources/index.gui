@@ -32,21 +32,21 @@
     </use>
 
     <use href="#view-header" fill="fb-orange" height = "30">
-      <set href="#text" attributeName="text-buffer" to="Vibration Timing info" />
+      <set href="#text" attributeName="text-buffer" to="Conditions info" />
     </use>
 
     <use href="#scrollview-item" height = "175%">
-      <text id="counter" class="timer" x="180" y="10">Vibrations given: </text>
-      <text id="counter_time_1" class="timer" x="180" y="40">Time of vibration 1:  </text>
-      <text id="counter_time_2" class="timer" x="180" y="70">Time of vibration 2: </text>
-      <text id="counter_time_3" class="timer" x="180" y="100">Time of vibration 3: </text>
-      <text id="counter_time_4" class="timer" x="180" y="130">Time of vibration 4: </text>
-      <text id="counter_time_5" class="timer" x="180" y="160">Time of vibration 5: </text>
-      <text id="counter_time_6" class="timer" x="180" y="190">Time of vibration 6: </text>
-      <text id="counter_time_3" class="timer" x="180" y="220">Time of vibration 7: </text>
-      <text id="counter_time_4" class="timer" x="180" y="250">Time of vibration 8: </text>
-      <text id="counter_time_5" class="timer" x="180" y="280">Time of vibration 9: </text>
-      <text id="counter_time_6" class="timer" x="180" y="310">Time of vibration 10: </text>
+      <text id="counter" class="timer" x="180" y="10">Condition: V</text>
+      <text id="counter_time_1" class="timer" x="180" y="40">Time of 1:  </text>
+      <text id="counter_time_2" class="timer" x="180" y="70">Time of 2: </text>
+      <text id="counter_time_3" class="timer" x="180" y="100">Time of 3: </text>
+      <text id="counter_time_4" class="timer" x="180" y="130">Time of 4: </text>
+      <text id="counter_time_5" class="timer" x="180" y="160">Time of 5: </text>
+      <text id="counter_time_6" class="timer" x="180" y="190">Time of 6: </text>
+      <text id="counter_time_3" class="timer" x="180" y="220">Time of 7: </text>
+      <text id="counter_time_4" class="timer" x="180" y="250">Time of 8: </text>
+      <text id="counter_time_5" class="timer" x="180" y="280">Time of 9: </text>
+      <text id="counter_time_6" class="timer" x="180" y="310">Time of 10: </text>
       
       
       <image x="40%" y="85%" width="70" height="70" href="icon.png"/>

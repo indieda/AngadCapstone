@@ -1,0 +1,28 @@
+{
+  "devDependencies": {
+    "@fitbit/sdk": "~4.2.0"
+  },
+  "fitbit": {
+    "appUUID": "61f9b85d-f5f2-4491-892f-a3185c974e52",
+    "appType": "app",
+    "appDisplayName": "ANGAD_CAPSTONE",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#03a9f4",
+    "requestedPermissions": [
+      "access_activity",
+      "access_exercise",
+      "access_heart_rate",
+      "access_user_profile",
+      "run_background"
+    ],
+    "buildTargets": [
+      "higgs"
+    ],
+    "i18n": {
+      "en-US": {
+        "name": "ANGAD_CAPSTONE"
+      }
+    },
+    "defaultLanguage": "en-US"
+  }
+}
