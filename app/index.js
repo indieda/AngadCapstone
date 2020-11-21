@@ -22,10 +22,23 @@ const stepsLabel = document.getElementById("steps-label");
 const stepsData = document.getElementById("steps-data");
 //Math.random();
 var listVibrationCheck = [false,false,false,false,false,false];
+var counter = document.getElementById("counter");
+var counts = 0;
+var counterList = [0,0,0,0,0,0,];
+ counterList[0] = document.getElementById("counter_time_1");
+ counterList[1] = document.getElementById("counter_time_2");
+ counterList[2] = document.getElementById("counter_time_3");
+ counterList[3] = document.getElementById("counter_time_4");
+ counterList[4] = document.getElementById("counter_time_5");
+ counterList[5] = document.getElementById("counter_time_6");
 
-
+  counter.text = "Vibrations given: " + counts;
 function ring(){
   vibration.start("alert");
+  counterList[counts].text = "Time of vibration " + counts + ": " + Math.floor((exercise.stats.activeTime/(1000*60))%60) + "Min" + Math.floor((exercise.stats.activeTime/1000)%60)+"sec";
+  counts ++;
+  counter.text = "Vibrations given: " + counts;
+  
 //  setTimeout(, 4000);
 //  vibration.stop();
 /*
@@ -187,7 +200,8 @@ stopButton.onactivate = function(evt) {
   }
   if(todayStepsFlag == false){
     startHeartSensor();
-    startTodaysStepsUpdate = setInterval(refreshSteps, 1000);
+    //Uncomment below if you want the steps to continue counting on stopping.
+    //startTodaysStepsUpdate = setInterval(refreshSteps, 1000);
     todayStepsFlag = true;
   }
 }
