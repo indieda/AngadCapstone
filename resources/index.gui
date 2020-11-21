@@ -12,22 +12,25 @@
       <set href="#text" attributeName="text-buffer" to="Start/Stop main page" />
     </use>
     <use href="#scrollview-item">         
-      <text id="steps-label" class="sensor-label" x="200" y="190">stepsLabel</text>
-      <text id="steps-data" class="sensor-data" x="300" y="190">no. Steps</text>
-      <text id="timer" class="timer" x="180" y="170">Timer: </text>
-      <text id="hrm-label" class="sensor-label" x="20%" y="190">heartRate</text>
-      <text id="hrm-data" class="sensor-data" x="140" y="190"></text>
-      <use id="startButton" href="#square-button-icon" fill="fb-green">
+      <text id="timer" class="timer" x="180" y="105">Timer: </text>
+      <text id="steps-label" class="sensor-label" x="200" y="125">stepsLabel</text>
+      <text id="steps-data" class="sensor-data" x="300" y="125">no. Steps</text>
+      <text id="hrm-label" class="sensor-label" x="20%" y="125">heartRate</text>
+      <text id="hrm-data" class="sensor-data" x="133" y="125"></text>
+      
+      <use id="startButton" href="#square-button-icon" fill="fb-green"height = "60">
         <set href="#text" attributeName="text-buffer" to="Start!"/>
         <set href="#image" attributeName="href" to="play.png"/>
       </use>
   
-      <use id="stopButton" href = "#square-button-icon" y="65"fill="coral">
+      <use id="stopButton" href = "#square-button-icon" height = "60" y="150"fill="coral">
         <set href="#text" attributeName="text-buffer" to="Stop!"/>
+        <set href="#text" attributeName="font-size" to="30"/>
+        <set href="#text" attributeName="font-weight" to="bold"/>
         <set href="#image" attributeName="href" to="stop.png"/>
       </use>
     </use>
-    <use href="#scrollview-item" height = "100%">
+    <use href="#scrollview-item" height = "200%">
       <use href="#view-header" height="40" fill="fb-orange">
         <set href="#text" attributeName="text-buffer" to="Vibration Timing info" />
       </use>
@@ -38,6 +41,13 @@
       <text id="counter_time_4" class="timer" x="180" y="170">Time of vibration 4: </text>
       <text id="counter_time_5" class="timer" x="180" y="200">Time of vibration 5: </text>
       <text id="counter_time_6" class="timer" x="180" y="230">Time of vibration 6: </text>
+      <text id="counter_time_3" class="timer" x="180" y="260">Time of vibration 7: </text>
+      <text id="counter_time_4" class="timer" x="180" y="290">Time of vibration 8: </text>
+      <text id="counter_time_5" class="timer" x="180" y="320">Time of vibration 9: </text>
+      <text id="counter_time_6" class="timer" x="180" y="350">Time of vibration 10: </text>
+      
+      
+      <image x="40%" y="85%" width="70" height="70" href="icon.png"/>
     </use>
   </use>
 </svg>

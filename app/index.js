@@ -21,14 +21,14 @@ const hrmData = document.getElementById("hrm-data");
 const stepsLabel = document.getElementById("steps-label");
 const stepsData = document.getElementById("steps-data");
 //Math.random();
-var listVibrationCheck = [false,false,false,false,false,false];
+var listVibrationCheck = [false,false,false,false,false,false,false,false,false,false];
 var counter = document.getElementById("counter");
 var counts = 0;
-var counterList = [0,0,0,0,0,0];
-var randTracker = [generateThreshold(0),generateThreshold(300),generateThreshold(600),generateThreshold(900),generateThreshold(1200),generateThreshold(1500)];
+var counterList = [0,0,0,0,0,0,0,0,0,0];
+var randTracker = [generateThreshold(0),generateThreshold(180),generateThreshold(360),generateThreshold(540),generateThreshold(720),generateThreshold(900),generateThreshold(1080),generateThreshold(1260),generateThreshold(1440),generateThreshold(1620)];
 
 function generateThreshold(a){
-  var b = a + (Math.random()*300);
+  var b = a +  (Math.random()*180);
   return b;
 }
 
@@ -38,6 +38,12 @@ function generateThreshold(a){
  counterList[3] = document.getElementById("counter_time_4");
  counterList[4] = document.getElementById("counter_time_5");
  counterList[5] = document.getElementById("counter_time_6");
+ counterList[6] = document.getElementById("counter_time_7");
+ counterList[7] = document.getElementById("counter_time_8");
+ counterList[8] = document.getElementById("counter_time_9");
+ counterList[9] = document.getElementById("counter_time_10");
+
+
 
   counter.text = "Vibrations given: " + counts;
 function ring(){
@@ -71,60 +77,94 @@ function refreshExerciseTimer(){
   //Set the minutes and seconds.
   timer.text = "Timer: " + Math.floor((exercise.stats.activeTime/(1000*60))%60) + "Min" + Math.floor((exercise.stats.activeTime/1000)%60)+"sec";
   //Set the heart rate values.
+      if (hrmData.text >= 150 ) 
+    {
+      hrmData.style.fill = "#FF7F50";
+    }
+    else {
+      hrmData.style.fill = "#00A629";
+    }
   hrmData.text = exercise.stats.heartRate["current"];
   //Set the step data values.
   stepsData.text = exercise.stats.steps; 
   var secondsSinceStart = exercise.stats.activeTime/1000;
-  
-
-  if ((secondsSinceStart > randTracker[0]) && (secondsSinceStart < 300)){
-    if (!listVibrationCheck[0]){
+  if (secondsSinceStart > randTracker[9]) {
+    if (!listVibrationCheck[9]){
       console.log(secondsSinceStart);
-      console.log(Math.random()*300);
       ring();
-      listVibrationCheck[0] = true;
+      listVibrationCheck[9] = true;
       console.log(listVibrationCheck);
-    }
+    } 
   }
-  else if ((secondsSinceStart > randTracker[1]) && (secondsSinceStart < 600)){
-    if (!listVibrationCheck[1]){
+  else if (secondsSinceStart > randTracker[8]) {
+    if (!listVibrationCheck[8]){
       console.log(secondsSinceStart);
       ring();
-      listVibrationCheck[1] = true;
+      listVibrationCheck[8] = true;
       console.log(listVibrationCheck);
-    }
+    } 
   }
-  else if ((secondsSinceStart > randTracker[2]) && (secondsSinceStart < 900)){
-    if (!listVibrationCheck[2]){
+  else if (secondsSinceStart > randTracker[7]) {
+    if (!listVibrationCheck[7]){
       console.log(secondsSinceStart);
       ring();
-      listVibrationCheck[2] = true;
+      listVibrationCheck[7] = true;
       console.log(listVibrationCheck);
-    }
-      }
-  else if ((secondsSinceStart > randTracker[3]) && (secondsSinceStart < 1200)){
-    if (!listVibrationCheck[3]){
-      console.log(secondsSinceStart);
-      ring();
-      listVibrationCheck[3] = true;
-      console.log(listVibrationCheck);
-    }
-    
+    } 
   }
-  else if ((secondsSinceStart > randTracker[4]) && (secondsSinceStart < 1500)){
+  else if (secondsSinceStart > randTracker[6]) {
+    if (!listVibrationCheck[6]){
+      console.log(secondsSinceStart);
+      ring();
+      listVibrationCheck[6] = true;
+      console.log(listVibrationCheck);
+    } 
+  }
+  else if (secondsSinceStart > randTracker[5]) {
+    if (!listVibrationCheck[5]){
+      console.log(secondsSinceStart);
+      ring();
+      listVibrationCheck[5] = true;
+      console.log(listVibrationCheck);
+    } 
+  }
+  else if (secondsSinceStart > randTracker[4]) {
     if (!listVibrationCheck[4]){
       console.log(secondsSinceStart);
       ring();
       listVibrationCheck[4] = true;
       console.log(listVibrationCheck);
-    }
-    
+    } 
   }
-  else if ((secondsSinceStart > randTracker[5]) && (secondsSinceStart < 1800)){
-    if (!listVibrationCheck[5]){
+  else if (secondsSinceStart > randTracker[3]) {
+    if (!listVibrationCheck[3]){
       console.log(secondsSinceStart);
       ring();
-      listVibrationCheck[5] = true;
+      listVibrationCheck[3] = true;
+      console.log(listVibrationCheck);
+    } 
+  }
+  else if (secondsSinceStart > randTracker[2]) {
+    if (!listVibrationCheck[2]){
+      console.log(secondsSinceStart);
+      ring();
+      listVibrationCheck[2] = true;
+      console.log(listVibrationCheck);
+    } 
+  }
+  else if (secondsSinceStart > randTracker[1]) {
+    if (!listVibrationCheck[1]){
+      console.log(secondsSinceStart);
+      ring();
+      listVibrationCheck[1] = true;
+      console.log(listVibrationCheck);
+    } 
+  }
+  else if (secondsSinceStart > randTracker[0]) {
+    if (!listVibrationCheck[0]){
+      console.log(secondsSinceStart);
+      ring();
+      listVibrationCheck[0] = true;
       console.log(listVibrationCheck);
     } 
   }
@@ -169,9 +209,6 @@ startButton.onactivate = function(evt) {
 }
 
 
-
-
-
 function stopExercise() {
   console.log("STOPPED");
   startButton.style.fill = "#00A629";
@@ -207,12 +244,16 @@ function startHeartSensor(){
   hrm = new HeartRateSensor({ frequency: 1});
   hrm.addEventListener("reading", () => {
    hrmData.text = JSON.stringify(hrm.heartRate);
-    if (parseInt(JSON.stringify(hrm.heartRate)) >= 100 ) 
+    if (parseInt(JSON.stringify(hrm.heartRate)) >= 150 ) 
     {
-      console.log("heart rate more than 100!");
+      console.log("heart rate more than 150!");
       console.log(hrm.heartRate);
-      vibration.start("ring");
+      hrmData.style.fill = "#FF7F50";
+      //vibration.start("ring");
                                          }
+    else {
+      hrmData.style.fill = "#00A629";
+    }
 
   });
   sensors.push(hrm);
