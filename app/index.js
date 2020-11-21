@@ -77,7 +77,7 @@ function refreshExerciseTimer(){
   //Set the minutes and seconds.
   timer.text = "Timer: " + Math.floor((exercise.stats.activeTime/(1000*60))%60) + "Min" + Math.floor((exercise.stats.activeTime/1000)%60)+"sec";
   //Set the heart rate values.
-      if (hrmData.text >= 150 ) 
+      if (hrmData.text >= 150) 
     {
       hrmData.style.fill = "#FF7F50";
     }
