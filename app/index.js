@@ -24,7 +24,14 @@ const stepsData = document.getElementById("steps-data");
 var listVibrationCheck = [false,false,false,false,false,false];
 var counter = document.getElementById("counter");
 var counts = 0;
-var counterList = [0,0,0,0,0,0,];
+var counterList = [0,0,0,0,0,0];
+var randTracker = [generateThreshold(0),generateThreshold(300),generateThreshold(600),generateThreshold(900),generateThreshold(1200),generateThreshold(1500)];
+
+function generateThreshold(a){
+  var b = a + (Math.random()*300);
+  return b;
+}
+
  counterList[0] = document.getElementById("counter_time_1");
  counterList[1] = document.getElementById("counter_time_2");
  counterList[2] = document.getElementById("counter_time_3");
@@ -67,71 +74,58 @@ function refreshExerciseTimer(){
   hrmData.text = exercise.stats.heartRate["current"];
   //Set the step data values.
   stepsData.text = exercise.stats.steps; 
+  var secondsSinceStart = exercise.stats.activeTime/1000;
   
-  //Checks the timer and delivers the ring
-  /*
-  if ((exercise.stats.activeTime/(1000) > 00) & ((exercise.stats.activeTime/(1000) < 600))  {
-    
-  }
-  else if ((exercise.stats.activeTime/(1000) > 180) & ((exercise.stats.activeTime/(1000) < 600)) {
-    
-  }
-  else if ((exercise.stats.activeTime/(1000) > 600) & ((exercise.stats.activeTime/(1000) < 900)) {
-    
-  }
-  else if ((exercise.stats.activeTime/(1000) > 900) & ((exercise.stats.activeTime/(1000) < 1200)) {
-           
-           }
-  else if ((exercise.stats.activeTime/(1000) > 1200) & ((exercise.stats.activeTime/(1000) < 1500)) {
-           
-           }
-  else if ((exercise.stats.activeTime/(1000) > 1500) & ((exercise.stats.activeTime/(1000) < 1800)) {
-           
-           }
-  */
-  
-  if ((exercise.stats.activeTime/(1000) > Math.random()*300) & (exercise.stats.activeTime/(1000) < 300)){
+
+  if ((secondsSinceStart > randTracker[0]) && (secondsSinceStart < 300)){
     if (!listVibrationCheck[0]){
-      console.log(exercise.stats.activeTime/(1000));
+      console.log(secondsSinceStart);
+      console.log(Math.random()*300);
       ring();
       listVibrationCheck[0] = true;
+      console.log(listVibrationCheck);
     }
   }
-  else if ((exercise.stats.activeTime/(1000) > (300+Math.random()*300)) & (exercise.stats.activeTime/(1000) < 600)){
+  else if ((secondsSinceStart > randTracker[1]) && (secondsSinceStart < 600)){
     if (!listVibrationCheck[1]){
-      console.log(exercise.stats.activeTime/(1000));
+      console.log(secondsSinceStart);
       ring();
       listVibrationCheck[1] = true;
+      console.log(listVibrationCheck);
     }
   }
-  else if ((exercise.stats.activeTime/(1000) > (600+Math.random()*300)) & (exercise.stats.activeTime/(1000) < 900)){
+  else if ((secondsSinceStart > randTracker[2]) && (secondsSinceStart < 900)){
     if (!listVibrationCheck[2]){
-      console.log(exercise.stats.activeTime/(1000));
+      console.log(secondsSinceStart);
       ring();
       listVibrationCheck[2] = true;
+      console.log(listVibrationCheck);
     }
       }
-  else if ((exercise.stats.activeTime/(1000) > (900+Math.random()*300)) & (exercise.stats.activeTime/(1000) < 1200)){
+  else if ((secondsSinceStart > randTracker[3]) && (secondsSinceStart < 1200)){
     if (!listVibrationCheck[3]){
-      console.log(exercise.stats.activeTime/(1000));
+      console.log(secondsSinceStart);
       ring();
       listVibrationCheck[3] = true;
+      console.log(listVibrationCheck);
     }
     
   }
-  else if ((exercise.stats.activeTime/(1000) > (1200+Math.random()*300)) & (exercise.stats.activeTime/(1000) < 1500)){
+  else if ((secondsSinceStart > randTracker[4]) && (secondsSinceStart < 1500)){
     if (!listVibrationCheck[4]){
-      console.log(exercise.stats.activeTime/(1000));
+      console.log(secondsSinceStart);
       ring();
       listVibrationCheck[4] = true;
+      console.log(listVibrationCheck);
     }
     
   }
-  else if ((exercise.stats.activeTime/(1000) > (1500+Math.random()*300)) & (exercise.stats.activeTime/(1000) < 1800)){
+  else if ((secondsSinceStart > randTracker[5]) && (secondsSinceStart < 1800)){
     if (!listVibrationCheck[5]){
-      console.log(exercise.stats.activeTime/(1000));
+      console.log(secondsSinceStart);
       ring();
       listVibrationCheck[5] = true;
+      console.log(listVibrationCheck);
     } 
   }
 }
