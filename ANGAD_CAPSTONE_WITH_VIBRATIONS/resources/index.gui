@@ -35,6 +35,10 @@
       <set href="#text" attributeName="text-buffer" to="Conditions info" />
     </use>
 
+    
+    <use href="#scrollview-item" height = "300%">
+    </use>
+    
     <use href="#scrollview-item" height = "175%">
       <text id="counter" class="timer" x="180" y="10">Condition: V</text>
       <text id="counter_time_1" class="timer" x="180" y="40">Time of 1:  </text>
