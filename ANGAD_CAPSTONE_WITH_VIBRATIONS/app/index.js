@@ -27,6 +27,7 @@ var counts = 0;
 var counterList = [0,0,0,0,0,0,0,0,0,0];
 var randTracker = [generateThreshold(0),generateThreshold(180),generateThreshold(360),generateThreshold(540),generateThreshold(720),generateThreshold(900),generateThreshold(1080),generateThreshold(1260),generateThreshold(1440),generateThreshold(1620)];
 
+
 function generateThreshold(a){
   var b = a +  (Math.random()*180);
   return b;
@@ -46,6 +47,7 @@ function generateThreshold(a){
 
 function ring(){
   vibration.start("alert");
+  setTimeout(vibration.stop,5200);
   counterList[counts].text = "Time of " + (counts + 1) + ": " + Math.floor((exercise.stats.activeTime/(1000*60))%60) + "Min" + Math.floor((exercise.stats.activeTime/1000)%60)+"sec";
   counts ++;
   counter.text = "Condition: " + counts;
@@ -62,6 +64,7 @@ function ring(){
 "ping" (just 2, not enough yet.)
 "ring"
 */
+
 }
 
 var startTimer;
