@@ -23,10 +23,8 @@ SDK 4.2 project tree:
 - app
 
   - index.js
-  
-  
+    
 - companion
-
 
   - index.js
   
@@ -39,5 +37,4 @@ SDK 4.2 project tree:
   - styles.css
   
   - icon.png
-  
   
