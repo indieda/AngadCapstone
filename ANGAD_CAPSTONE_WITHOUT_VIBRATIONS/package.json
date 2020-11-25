@@ -5,7 +5,7 @@
   "fitbit": {
     "appUUID": "61f9b85d-f5f2-4491-892f-a3185c974e52",
     "appType": "app",
-    "appDisplayName": "ANGAD_CAPSTONE",
+    "appDisplayName": "NO_VIBRATION",
     "iconFile": "resources/icon.png",
     "wipeColor": "#03a9f4",
     "requestedPermissions": [
@@ -20,7 +20,7 @@
     ],
     "i18n": {
       "en-US": {
-        "name": "ANGAD_CAPSTONE"
+        "name": "NO_VIBRATION"
       }
     },
     "defaultLanguage": "en-US"
