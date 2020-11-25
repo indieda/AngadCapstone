@@ -17,7 +17,6 @@
       <text id="steps-data" class="sensor-data" x="300" y="120">no. Steps</text>
       <text id="hrm-label" class="sensor-label" x="20%" y="120">heartRate</text>
       <text id="hrm-data" class="sensor-data" x="133" y="120"></text>
-      
       <use id="startButton" href="#square-button-icon" fill="fb-green"height = "60">
         <set href="#text" attributeName="text-buffer" to="Start!"/>
         <set href="#image" attributeName="href" to="play.png"/>
@@ -37,6 +36,14 @@
 
     
     <use href="#scrollview-item" height = "300%">
+      <use id="condition-button" href = "#square-button-icon" height = "60" y="500"fill="coral">
+        <set href="#text" attributeName="text-buffer" to="V"/>
+        <set href="#text" attributeName="font-size" to="30"/>
+        <set href="#text" attributeName="font-weight" to="bold"/>
+        <set href="#text" attributeName="x" to="12"/>
+      </use>
+      
+      
     </use>
     
     <use href="#scrollview-item" height = "175%">

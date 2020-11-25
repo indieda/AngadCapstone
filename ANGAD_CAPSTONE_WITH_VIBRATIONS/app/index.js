@@ -20,6 +20,7 @@ const hrmLabel = document.getElementById("hrm-label");
 const hrmData = document.getElementById("hrm-data");
 const stepsLabel = document.getElementById("steps-label");
 const stepsData = document.getElementById("steps-data");
+const conditionButton = document.getElementById("condition-button");
 //Math.random();
 var listVibrationCheck = [false,false,false,false,false,false,false,false,false,false];
 var counter = document.getElementById("counter");
@@ -27,6 +28,7 @@ var counts = 0;
 var counterList = [0,0,0,0,0,0,0,0,0,0];
 var randTracker = [generateThreshold(0),generateThreshold(180),generateThreshold(360),generateThreshold(540),generateThreshold(720),generateThreshold(900),generateThreshold(1080),generateThreshold(1260),generateThreshold(1440),generateThreshold(1620)];
 
+var condition = true;
 
 function generateThreshold(a){
   var b = a +  (Math.random()*180);
@@ -46,12 +48,14 @@ function generateThreshold(a){
 
 
 function ring(){
+  
+if (condition) {
   vibration.start("alert");
   setTimeout(vibration.stop,5200);
   counterList[counts].text = "Time of " + (counts + 1) + ": " + Math.floor((exercise.stats.activeTime/(1000*60))%60) + "Min" + Math.floor((exercise.stats.activeTime/1000)%60)+"sec";
   counts ++;
   counter.text = "Condition: " + counts;
-  
+  console.log("vibrating");
 //  setTimeout(, 4000);
 //  vibration.stop();
 /*
@@ -63,7 +67,12 @@ function ring(){
 "nudge-max" (too light a tap!)
 "ping" (just 2, not enough yet.)
 "ring"
-*/
+*/}
+else {
+  counterList[counts].text = "Time of " + (counts + 1) + ": " + Math.floor((exercise.stats.activeTime/(1000*60))%60) + "Min" + Math.floor((exercise.stats.activeTime/1000)%60)+"sec";
+  counts ++;
+    console.log("not vibrating");
+}
 
 }
 
@@ -181,6 +190,19 @@ function refreshExerciseTimer(){
   }
 }
 
+//Condition button logic
+conditionButton.onactivate = function(evt) {
+  if (conditionButton.text == "V") {
+    conditionButton.text = "NV";
+    counter.text = "Condition: NV";
+    condition = false;
+  }
+  else {
+    conditionButton.text = "V";
+    condition = true;
+    counter.text = "Condition: " + counts;
+  }
+}
 
 //Start button logic
 startButton.onactivate = function(evt) {
