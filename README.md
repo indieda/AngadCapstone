@@ -15,7 +15,7 @@ INSTRUCTIONS:
 
 To toggle between vibration and non-vibration mode
 -----------------
-Scroll down below for the button to toggle between different vibration timings
+Scroll down below for the button to toggle between V and NV conditions
 
 [SDK4.2 documentation](https://web.archive.org/web/20200912173010/https://dev.fitbit.com/)
 
