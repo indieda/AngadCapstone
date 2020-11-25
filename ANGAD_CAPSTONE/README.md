@@ -20,13 +20,24 @@ INSTRUCTIONS:
 SDK 4.2 project tree:
 
 
--app
-  -index.js
--companion
-  -index.js
--resources
-  -index.gui
-  -widgets.gui
-  -styles.css
-  -icon.png
+- app
+
+  - index.js
+  
+  
+- companion
+
+
+  - index.js
+  
+- resources
+
+  - index.gui
+  
+  - widgets.gui
+  
+  - styles.css
+  
+  - icon.png
+  
   
