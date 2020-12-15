@@ -26,7 +26,6 @@ var listVibrationCheck = [false,false,false,false,false,false,false,false,false,
 var counter = document.getElementById("counter");
 var counts = 0;
 var counterList = [0,0,0,0,0,0,0,0,0,0];
-var conditionArray = randTracker;
 
 var randTracker = [];
 for (var num = 0; num < 10; num++){
@@ -44,6 +43,8 @@ function generateThreshold(a){
   var b = a +  (Math.random()*120);
   return b;
 }
+
+var conditionArray = randTracker;
 
  counterList[0] = document.getElementById("counter_time_1");
  counterList[1] = document.getElementById("counter_time_2");
