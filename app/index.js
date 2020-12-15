@@ -26,12 +26,22 @@ var listVibrationCheck = [false,false,false,false,false,false,false,false,false,
 var counter = document.getElementById("counter");
 var counts = 0;
 var counterList = [0,0,0,0,0,0,0,0,0,0];
-var randTracker = [generateThreshold(0),generateThreshold(180),generateThreshold(360),generateThreshold(540),generateThreshold(720),generateThreshold(900),generateThreshold(1080),generateThreshold(1260),generateThreshold(1440),generateThreshold(1620)];
+var conditionArray = randTracker;
+
+var randTracker = [];
+for (var num = 0; num < 10; num++){
+ randTracker.push(generateThreshold((num*2*60)+600)); 
+}
+
+var debugTracker = [];
+for (var dnum = 0; dnum < 10; dnum++){
+ debugTracker.push(generateThreshold(dnum*2*60)); 
+}
 
 var condition = true;
 
 function generateThreshold(a){
-  var b = a +  (Math.random()*180);
+  var b = a +  (Math.random()*120);
   return b;
 }
 
@@ -46,9 +56,7 @@ function generateThreshold(a){
  counterList[8] = document.getElementById("counter_time_9");
  counterList[9] = document.getElementById("counter_time_10");
 
-
 function ring(){
-  
 if (condition) {
   vibration.start("alert");
   setTimeout(vibration.stop,5200);
@@ -85,7 +93,7 @@ var todayStepsFlag;
 //Function to refresh the timer
 function refreshExerciseTimer(){
   //Set the minutes and seconds.
-  timer.text = "Timer: " + Math.floor((exercise.stats.activeTime/(1000*60))%60) + "Min" + Math.floor((exercise.stats.activeTime/1000)%60)+"sec";
+  timer.text = "Timer: " + Math.floor(exercise.stats.activeTime/(1000*60)) + "Min" + Math.floor((exercise.stats.activeTime/1000)%60)+"sec";
   //Set the heart rate values.
       if (hrmData.text >= 150) 
     {
@@ -98,7 +106,7 @@ function refreshExerciseTimer(){
   //Set the step data values.
   stepsData.text = exercise.stats.steps; 
   var secondsSinceStart = exercise.stats.activeTime/1000;
-  if (secondsSinceStart > randTracker[9]) {
+  if (secondsSinceStart > conditionArray[9]) {
     if (!listVibrationCheck[9]){
       console.log(secondsSinceStart);
       counter.text = "Condition: " + counts;
@@ -107,7 +115,7 @@ function refreshExerciseTimer(){
       console.log(listVibrationCheck);
     } 
   }
-  else if (secondsSinceStart > randTracker[8]) {
+  else if (secondsSinceStart > conditionArray[8]) {
     if (!listVibrationCheck[8]){
       console.log(secondsSinceStart);
       counter.text = "Condition: " + counts;
@@ -116,7 +124,7 @@ function refreshExerciseTimer(){
       console.log(listVibrationCheck);
     } 
   }
-  else if (secondsSinceStart > randTracker[7]) {
+  else if (secondsSinceStart > conditionArray[7]) {
     if (!listVibrationCheck[7]){
       console.log(secondsSinceStart);
       counter.text = "Condition: " + counts;
@@ -125,7 +133,7 @@ function refreshExerciseTimer(){
       console.log(listVibrationCheck);
     } 
   }
-  else if (secondsSinceStart > randTracker[6]) {
+  else if (secondsSinceStart > conditionArray[6]) {
     if (!listVibrationCheck[6]){
       console.log(secondsSinceStart);
       counter.text = "Condition: " + counts;
@@ -134,7 +142,7 @@ function refreshExerciseTimer(){
       console.log(listVibrationCheck);
     } 
   }
-  else if (secondsSinceStart > randTracker[5]) {
+  else if (secondsSinceStart > conditionArray[5]) {
     if (!listVibrationCheck[5]){
       console.log(secondsSinceStart);
       counter.text = "Condition: " + counts;
@@ -143,7 +151,7 @@ function refreshExerciseTimer(){
       console.log(listVibrationCheck);
     } 
   }
-  else if (secondsSinceStart > randTracker[4]) {
+  else if (secondsSinceStart > conditionArray[4]) {
     if (!listVibrationCheck[4]){
       console.log(secondsSinceStart);
       counter.text = "Condition: " + counts;
@@ -152,7 +160,7 @@ function refreshExerciseTimer(){
       console.log(listVibrationCheck);
     } 
   }
-  else if (secondsSinceStart > randTracker[3]) {
+  else if (secondsSinceStart > conditionArray[3]) {
     if (!listVibrationCheck[3]){
       counter.text = "Condition: " + counts;
       console.log(secondsSinceStart);
@@ -161,7 +169,7 @@ function refreshExerciseTimer(){
       console.log(listVibrationCheck);
     } 
   }
-  else if (secondsSinceStart > randTracker[2]) {
+  else if (secondsSinceStart > conditionArray[2]) {
     if (!listVibrationCheck[2]){
       console.log(secondsSinceStart);
       counter.text = "Condition: " + counts;
@@ -170,7 +178,7 @@ function refreshExerciseTimer(){
       console.log(listVibrationCheck);
     } 
   }
-  else if (secondsSinceStart > randTracker[1]) {
+  else if (secondsSinceStart > conditionArray[1]) {
     if (!listVibrationCheck[1]){
       console.log(secondsSinceStart);
       counter.text = "Condition: " + counts;
@@ -179,7 +187,7 @@ function refreshExerciseTimer(){
       console.log(listVibrationCheck);
     } 
   }
-  else if (secondsSinceStart > randTracker[0]) {
+  else if (secondsSinceStart > conditionArray[0]) {
     if (!listVibrationCheck[0]){
       console.log(secondsSinceStart);
       counter.text = "Condition: " + counts;
@@ -196,11 +204,19 @@ conditionButton.onactivate = function(evt) {
     conditionButton.text = "NV";
     counter.text = "Condition: NV";
     condition = false;
+    conditionArray = randTracker;
   }
-  else {
-    conditionButton.text = "V";
+  else if (conditionButton.text == "NV"){
+    conditionButton.text = "deb";
     condition = true;
-    counter.text = "Condition: " + counts;
+    counter.text = "Condition: deb";
+    conditionArray = debugTracker;
+  }
+  else if (conditionButton.text == "deb") {
+    conditionButton.text = "V"
+    condition = true;
+    counter.text = "Condition: V";
+    conditionArray = randTracker;
   }
 }
 
