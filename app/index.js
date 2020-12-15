@@ -29,18 +29,20 @@ var counterList = [0,0,0,0,0,0,0,0,0,0];
 
 var randTracker = [];
 for (var num = 0; num < 10; num++){
- randTracker.push(generateThreshold((num*2*60)+600)); 
+ randTracker.push(generateThreshold((num*120)+600)); 
+  //randTracker.push(generateThreshold(num*6)); 
 }
 
 var debugTracker = [];
 for (var dnum = 0; dnum < 10; dnum++){
- debugTracker.push(generateThreshold(dnum*2*60)); 
+ debugTracker.push(generateThreshold(dnum*120)); 
 }
 
 var condition = true;
 
 function generateThreshold(a){
   var b = a +  (Math.random()*120);
+  //var b = a +  (Math.random()*6);
   return b;
 }
 
@@ -163,8 +165,8 @@ function refreshExerciseTimer(){
   }
   else if (secondsSinceStart > conditionArray[3]) {
     if (!listVibrationCheck[3]){
-      counter.text = "Condition: " + counts;
       console.log(secondsSinceStart);
+      counter.text = "Condition: " + counts;
       ring();
       listVibrationCheck[3] = true;
       console.log(listVibrationCheck);

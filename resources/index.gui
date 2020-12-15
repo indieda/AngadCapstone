@@ -54,10 +54,10 @@
       <text id="counter_time_4" class="timer" x="180" y="130">Time of 4: </text>
       <text id="counter_time_5" class="timer" x="180" y="160">Time of 5: </text>
       <text id="counter_time_6" class="timer" x="180" y="190">Time of 6: </text>
-      <text id="counter_time_3" class="timer" x="180" y="220">Time of 7: </text>
-      <text id="counter_time_4" class="timer" x="180" y="250">Time of 8: </text>
-      <text id="counter_time_5" class="timer" x="180" y="280">Time of 9: </text>
-      <text id="counter_time_6" class="timer" x="180" y="310">Time of 10: </text>
+      <text id="counter_time_7" class="timer" x="180" y="220">Time of 7: </text>
+      <text id="counter_time_8" class="timer" x="180" y="250">Time of 8: </text>
+      <text id="counter_time_9" class="timer" x="180" y="280">Time of 9: </text>
+      <text id="counter_time_10" class="timer" x="180" y="310">Time of 10: </text>
       
       
       <image x="40%" y="85%" width="70" height="70" href="icon.png"/>
