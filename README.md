@@ -8,10 +8,22 @@ INSTRUCTIONS:
 
 1. Open up the app
 2. Press start, once the participant is ready to run on the treadmill
-3. Every 3 minutes, a vibration will be delivered at a random time point, for a total of 10 times, at a maximum total time of 30 minutes.
-4. If the person needs to drink water or pause midway through, tap pause.
-5. Press stop once the total workout time is beyond 30 minutes.
-6. Exit the app, do not press start again before exiting the app or there'll be a bug where the step count will jump to an extremely high number.
+3. If the person needs to drink water or pause midway through, tap pause.
+4. Press stop once the total workout time is beyond 30 minutes.
+5. Copy down the timing of the vibrations upon scrolling down.
+6. For another trial: Exit the app and start again.
+7. To change conditions: exit the app, reopen the app and scroll down to cycle between "V", "NV", and "deb" conditions.
+8. To access data: go to fitbit dashboard on web or phone to export data 
+
+
+CONDITIONS:
+---------------------
+"V":
+The first 10 minutes will run silently. After that, for every 2 minutes, a vibration will be delivered at a random time point, for a total of 10 times, at a total time of 30 minutes since the timer started.
+
+"NV": Same as V, except no vibrations given.
+
+"deb": Every 2 minutes, a vibration will be delivered at a random time point, for a total of 10 times, at a total time of 20 minutes since the timer started. There is no 10 minutes silence at the start.
 
 To toggle between vibration and non-vibration mode
 -----------------
