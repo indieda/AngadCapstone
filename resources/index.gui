@@ -12,11 +12,6 @@
       <set href="#text" attributeName="text-buffer" to="Start/Stop main page" />
     </use>
     <use href="#scrollview-item">         
-      <text id="timer" class="timer" x="180" y="100">Timer: </text>
-      <text id="steps-label" class="sensor-label" x="200" y="120">stepsLabel</text>
-      <text id="steps-data" class="sensor-data" x="300" y="120">no. Steps</text>
-      <text id="hrm-label" class="sensor-label" x="20%" y="120">heartRate</text>
-      <text id="hrm-data" class="sensor-data" x="133" y="120"></text>
       <use id="startButton" href="#square-button-icon" fill="fb-green"height = "60">
         <set href="#text" attributeName="text-buffer" to="Start!"/>
         <set href="#image" attributeName="href" to="play.png"/>
@@ -42,6 +37,11 @@
         <set href="#text" attributeName="font-weight" to="bold"/>
         <set href="#text" attributeName="x" to="12"/>
       </use>
+      <text id="timer" class="timer" x="180" y="100">Timer: </text>
+      <text id="steps-label" class="sensor-label" x="200" y="120">stepsLabel</text>
+      <text id="steps-data" class="sensor-data" x="300" y="120">no. Steps</text>
+      <text id="hrm-label" class="sensor-label" x="20%" y="120">heartRate</text>
+      <text id="hrm-data" class="sensor-data" x="133" y="120"></text>
       
       
     </use>
