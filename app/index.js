@@ -203,22 +203,22 @@ function refreshExerciseTimer(){
 
 //Condition button logic
 conditionButton.onactivate = function(evt) {
-  if (conditionButton.text == "V") {
-    conditionButton.text = "NV";
-    counter.text = "Condition: NV";
+  if (conditionButton.text == "A") {
+    conditionButton.text = "B";
+    counter.text = "Condition: B";
     condition = false;
     conditionArray = randTracker;
   }
-  else if (conditionButton.text == "NV"){
-    conditionButton.text = "deb";
+  else if (conditionButton.text == "B"){
+    conditionButton.text = "C";
     condition = true;
-    counter.text = "Condition: deb";
+    counter.text = "Condition: C";
     conditionArray = debugTracker;
   }
-  else if (conditionButton.text == "deb") {
-    conditionButton.text = "V"
+  else if (conditionButton.text == "C") {
+    conditionButton.text = "A"
     condition = true;
-    counter.text = "Condition: V";
+    counter.text = "Condition: A";
     conditionArray = randTracker;
   }
 }

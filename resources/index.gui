@@ -17,11 +17,11 @@
         <set href="#image" attributeName="href" to="play.png"/>
       </use>
   
-      <use id="stopButton" href = "#square-button-icon" height = "60" y="150"fill="coral">
-        <set href="#text" attributeName="text-buffer" to="Stop!"/>
+            <use id="condition-button" href = "#square-button-icon" height = "60" y="150"fill="coral">
+        <set href="#text" attributeName="text-buffer" to="A"/>
         <set href="#text" attributeName="font-size" to="30"/>
         <set href="#text" attributeName="font-weight" to="bold"/>
-        <set href="#image" attributeName="href" to="stop.png"/>
+        <set href="#text" attributeName="x" to="12"/>
       </use>
     </use>
 
@@ -31,12 +31,13 @@
 
     
     <use href="#scrollview-item" height = "300%">
-      <use id="condition-button" href = "#square-button-icon" height = "60" y="500"fill="coral">
-        <set href="#text" attributeName="text-buffer" to="V"/>
+            <use id="stopButton" href = "#square-button-icon" height = "60" y="225"fill="coral">
+        <set href="#text" attributeName="text-buffer" to="Stop!"/>
         <set href="#text" attributeName="font-size" to="30"/>
         <set href="#text" attributeName="font-weight" to="bold"/>
-        <set href="#text" attributeName="x" to="12"/>
+        <set href="#image" attributeName="href" to="stop.png"/>
       </use>
+      
       <text id="timer" class="timer" x="180" y="100">Timer: </text>
       <text id="steps-label" class="sensor-label" x="200" y="120">stepsLabel</text>
       <text id="steps-data" class="sensor-data" x="300" y="120">no. Steps</text>
@@ -47,7 +48,7 @@
     </use>
     
     <use href="#scrollview-item" height = "175%">
-      <text id="counter" class="timer" x="180" y="10">Condition: V</text>
+      <text id="counter" class="timer" x="180" y="10">Condition: A</text>
       <text id="counter_time_1" class="timer" x="180" y="40">Time of 1:  </text>
       <text id="counter_time_2" class="timer" x="180" y="70">Time of 2: </text>
       <text id="counter_time_3" class="timer" x="180" y="100">Time of 3: </text>
